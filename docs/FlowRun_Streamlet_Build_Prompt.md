@@ -107,7 +107,7 @@ flowrun-streamlet-ioc-triage-v0.0.31/
 
 ## CRITICAL IMPLEMENTATION RULES
 
-### 1. IOC Types — Nine, Not Seven
+### 1. IOC Types
 The classifier must detect and handle exactly **nine** IOC types + unknown:
 - `ip` — IPv4 or IPv6
 - `domain` — hostname/FQDN without scheme (must contain a dot)
