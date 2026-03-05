@@ -39,7 +39,7 @@ jupyter notebook flowrun_agent.ipynb
 | Document | Description |
 |----------|-------------|
 | [QUICK_START.md](QUICK_START.md) | Setup, installation, and first-run guide |
-| [FlowRun_Streamlet_IoC_Triage_User_Manual_v2.3.md](docs/FlowRun_Streamlet_IoC_Triage_User_Manual_v2.3.md) | Full user manual with usage instructions |
+| [FlowRun_Streamlet_IoC_Triage_User_Manual_v2.3.md](docs/FlowRun_Streamlet_IoC_Triage_User_Manual_v2.md) | Full user manual with usage instructions |
 | [FlowRun_Streamlet_IoC_Triage_PRD_v2.md](docs/FlowRun_Streamlet_IoC_Triage_PRD_v2.md) | Product requirements (FR-01–FR-39, NFR-01–NFR-10) |
 | [FlowRun_Streamlet_IoC_Triage_Architecture_v2.md](docs/FlowRun_Streamlet_IoC_Triage_Architecture_v2.md) | System architecture and component design |
 | [FlowRun_Streamlet_Build_Prompt.md](docs/FlowRun_Streamlet_Build_Prompt.md) | Original engineering build instructions |
