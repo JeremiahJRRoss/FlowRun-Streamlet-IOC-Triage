@@ -279,32 +279,6 @@ erDiagram
 
 ---
 
-## Discrepancies Fixed from v2 ERD
-
-| # | Entity / Field | v2 ERD (wrong) | v0.0.31 Code (correct) |
-|---|---------------|----------------|----------------------|
-| 1 | `IOC.ioc_type` | 7 types + unknown | **9 types** + unknown: added `package`, `package_multi` |
-| 2 | `THREAT_INTEL_SOURCE.source_name` | 5 sources | **8 sources**: added `osv`, `osv_multi`, `registry` |
-| 3 | `WEIGHT_CONFIG.config_name` | `BASE_WEIGHTS \| CVE_WEIGHTS` | **4 configs**: added `PACKAGE_WEIGHTS`, `PACKAGE_MULTI_WEIGHTS` |
-| 4 | `CVE_WEIGHTS` values | VT 0.50, OTX 0.30, NVD 0.20 | **OTX 0.40, NVD 0.60** (VT removed — no CVE endpoint) |
-| 5 | `MODEL_CONFIG.model_string` | `gpt-5.2-chat-latest \| gpt-5.2` | **`gpt-4o-mini \| gpt-4o`** |
-| 6 | `MODEL_CONFIG.model_variant` | `Instant \| Thinking` | **Removed** — not applicable to GPT-4o models |
-| 7 | `MODEL_CONFIG.reasoning_effort` | `low \| medium \| high \| xhigh \| none` | **Removed** — not used in current config |
-| 8 | `LLM_CALL.reasoning_tokens` | Present | **Removed** — no reasoning model in use |
-| 9 | `ARIZE_TRACE.model_id` | Present | **Removed** — parameter is `project_name`, not `model_id` |
-| 10 | `AGENT_STATE` | Missing 3 fields | **Added**: `raw_intel`, `intel_errors`, `score_breakdown`, `active_weights` |
-| 11 | `THREAT_REPORT` | 4 fields | **11 fields**: added `tldr_summary`, `timestamp`, `detection_names`, `otx_campaigns`, `cvss_severity`, `ecosystem_breakdown`, `data_confidence` |
-| 12 | `ESCALATION_EVENT` | Only `yes \| abort` | **Added** `runtime_env` + `auto_proceed` response (Jupyter mode) |
-| 13 | **Missing entity** | — | **Added `CONFLICT_SIGNAL`** — detected when sources disagree |
-| 14 | **Missing entity** | — | **Added `PACKAGE_ECOSYSTEM`** — maps user prefixes to OSV ecosystem names |
-| 15 | **Missing relationship** | — | **Added** `COMPOSITE_SCORE ──o{ CONFLICT_SIGNAL` |
-| 16 | **Missing relationship** | — | **Added** `IOC }o──o| PACKAGE_ECOSYSTEM` |
-| 17 | **Missing relationship** | — | **Added** `THREAT_INTEL_SOURCE }o──o{ PACKAGE_ECOSYSTEM` |
-| 18 | Entity Reference table | "5 configured threat intelligence APIs" | **8 tools** across 9 API endpoints |
-| 19 | Footer | "GPT-5.2" | **GPT-4o** |
-
----
-
 ## Entity Reference
 
 ### Core Pipeline
