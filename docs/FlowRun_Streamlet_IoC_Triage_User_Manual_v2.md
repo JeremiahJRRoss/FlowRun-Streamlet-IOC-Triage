@@ -192,7 +192,7 @@ The FlowRun Streamlet: IoC Triage follows a modular, layered architecture design
 | **Layer**               | **Components**                                                                                                                                                 |
 | **Interaction Layer**   | Command-line interface (CLI) for analyst input. Future versions may include a REST API or Slack integration.                                                   |
 | **Agent Orchestration** | LangGraph StateGraph managing node execution, conditional routing, and shared state across the full triage pipeline.                                           |
-| **LLM & Tool Layer**    | LangChain tool wrappers for each API. OpenAI GPT-5.2 Instant (classification) and GPT-5.2 Thinking (report synthesis) — per-task model config in agent/llm.py. |
+| **LLM & Tool Layer**    | LangChain tool wrappers for each API. OpenAI ChatGPT 4o — per-task model config in agent/llm.py. |
 | **Intelligence Layer**  | VirusTotal API, AbuseIPDB API, AlienVault OTX API, urlscan.io API, NIST NVD API, OSV.dev API, npm/PyPI registries.                                             |
 | **Observability Layer** | Arize AI platform receiving OpenInference-formatted traces for monitoring, evaluation, and debugging.                                                          |
 
@@ -204,7 +204,7 @@ The data flow through the system follows a clean, unidirectional path:
 
 12. Input node receives the string and initializes the agent state
 
-13. Classifier node determines IOC type via GPT-5.2 Instant (low reasoning effort)
+13. Classifier node determines IOC type via  Instant (low reasoning effort)
 
 14. Enrichment node fans out to all relevant threat intel APIs in parallel
 
@@ -225,7 +225,7 @@ The data flow through the system follows a clean, unidirectional path:
 | **Component**               | **Technology & Notes**                                                                     |
 | **Orchestration Framework** | LangGraph 0.2+ — StateGraph with typed state, parallel fan-out, conditional edges          |
 | **LLM Framework**           | LangChain 0.3+ — tool definitions, LLM wrappers, output parsers                            |
-| **Language Model**          | OpenAI GPT-5.2 — Instant variant for classification, Thinking variant for report synthesis |
+| **Language Model**          | OpenAI  — Instant variant for classification, Thinking variant for report synthesis |
 | **Threat Intel APIs**       | VirusTotal, AbuseIPDB, AlienVault OTX, urlscan.io, NIST NVD                                |
 | **Observability**           | Arize AI — trace collection, visualization, evaluation, and alerting                       |
 | **Instrumentation**         | OpenInference (arize-otel) — automatic LangChain/LangGraph tracing                         |
@@ -252,7 +252,7 @@ All of the following must be obtained and set as environment variables before ru
 |                          |                                                                                                             |
 |--------------------------|-------------------------------------------------------------------------------------------------------------|
 | **Environment Variable** | **Source & Notes**                                                                                          |
-| **OPENAI_API_KEY**       | OpenAI account with GPT-5.2 API access. Paid plan required (gpt-5.2-chat-latest and gpt-5.2 model strings). |
+| **OPENAI_API_KEY**       | OpenAI account with  API access. Paid plan required (-chat-latest and  model strings). |
 | **VIRUSTOTAL_API_KEY**   | Free VirusTotal community account. Limit: 4 requests/min, 500/day on free tier.                             |
 | **ABUSEIPDB_API_KEY**    | Free AbuseIPDB account. Limit: 1,000 requests/day on free tier.                                             |
 | **OTX_API_KEY**          | Free AlienVault OTX account. Generous rate limits on free tier.                                             |
