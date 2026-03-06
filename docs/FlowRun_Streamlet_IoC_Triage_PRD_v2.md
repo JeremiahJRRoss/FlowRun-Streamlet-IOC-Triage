@@ -372,7 +372,7 @@ Resolution order: (1) .env file → (2) os.environ → (3) interactive getpass()
 | **Target** | **Feature**          | **Description**                                                                    |
 |------------|----------------------|------------------------------------------------------------------------------------|
 | **v2.0**   | REST API             | FastAPI wrapper for programmatic IOC submission                                    |
-| **v2.0**   | SIEM Integration     | Splunk and Sentinel connectors                                                     |
+| **v2.0**   | SIEM Integration     | Cribl, Elastic, and Splunk connectors                                                     |
 | **v2.0**   | Bulk IOC Ingestion   | CSV file upload for batch triage                                                   |
 | **v2.1**   | Arize Evaluations    | Span and trace-level LLM-as-judge evaluations                                     |
 | **v2.1**   | Socket.dev           | Real-time supply chain attack detection (install script analysis, network behavior)|
